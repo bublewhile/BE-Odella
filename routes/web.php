@@ -26,9 +26,9 @@ Route::prefix('admin')
         Route::resource('promo', PromoController::class);
         Route::resource('users', UserController::class)->only(['index', 'show', 'destroy']);
         Route::prefix('laporan')->name('laporan.')->group(function () {
-            Route::get('/',              [LaporanController::class, 'index'])->name('index');
-            Route::get('export-excel',   [LaporanController::class, 'exportExcel'])->name('excel');
-            Route::get('export-pdf',     [LaporanController::class, 'exportPdf'])->name('pdf');
+        Route::get('/', [LaporanController::class, 'index'])->name('index');
+        Route::get('export-excel',[LaporanController::class, 'exportExcel'])->name('excel');
+        Route::get('export-pdf', [LaporanController::class, 'exportPdf'])->name('pdf');
         });
     });
 

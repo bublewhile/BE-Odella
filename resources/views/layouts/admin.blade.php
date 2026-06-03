@@ -9,7 +9,9 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <style>
@@ -200,11 +202,12 @@
             display: none;
             position: fixed;
             inset: 0;
-            background: rgba(0,0,0,.45);
+            background: rgba(0, 0, 0, .45);
             z-index: 190;
             opacity: 0;
             transition: opacity .25s ease;
         }
+
         .sidebar-overlay.show {
             display: block;
             opacity: 1;
@@ -265,8 +268,14 @@
             flex-shrink: 0;
             transition: background .13s;
         }
-        .btn-hamburger:hover { background: var(--cream-dark); }
-        .btn-hamburger i { font-size: 1.15rem; }
+
+        .btn-hamburger:hover {
+            background: var(--cream-dark);
+        }
+
+        .btn-hamburger i {
+            font-size: 1.15rem;
+        }
 
         .page-body {
             padding: 1.25rem 1.5rem 2.5rem;
@@ -332,7 +341,10 @@
             color: var(--text-muted);
             margin-top: .2rem;
         }
-        .stat-change.up { color: #388e3c; }
+
+        .stat-change.up {
+            color: #388e3c;
+        }
 
         .table {
             font-size: .85rem;
@@ -369,12 +381,36 @@
             font-size: .72rem;
             font-weight: 600;
         }
-        .status-pill.selesai                 { background: #e8f5ef; color: #2E7D5C; }
-        .status-pill.dikirim                 { background: #e3eef9; color: #1A5FA8; }
-        .status-pill.diproses                { background: #fef3e2; color: #C47D2E; }
-        .status-pill.menunggu_pembayaran     { background: var(--cream-dark); color: var(--text-muted); }
-        .status-pill.pembayaran_diverifikasi { background: #fff8e1; color: #f57f17; }
-        .status-pill.dibatalkan              { background: #fbeaed; color: var(--burgundy); }
+
+        .status-pill.selesai {
+            background: #e8f5ef;
+            color: #2E7D5C;
+        }
+
+        .status-pill.dikirim {
+            background: #e3eef9;
+            color: #1A5FA8;
+        }
+
+        .status-pill.diproses {
+            background: #fef3e2;
+            color: #C47D2E;
+        }
+
+        .status-pill.menunggu_pembayaran {
+            background: var(--cream-dark);
+            color: var(--text-muted);
+        }
+
+        .status-pill.pembayaran_diverifikasi {
+            background: #fff8e1;
+            color: #f57f17;
+        }
+
+        .status-pill.dibatalkan {
+            background: #fbeaed;
+            color: var(--burgundy);
+        }
 
         .filter-status-badge {
             background-color: #860120 !important;
@@ -389,14 +425,16 @@
             align-items: center;
             gap: 0.4rem;
         }
+
         .filter-status-badge:hover {
             background-color: #5E0118 !important;
             transform: translateY(-1px);
             color: white;
         }
+
         .filter-status-badge.active {
             background-color: #5E0118 !important;
-            box-shadow: 0 2px 6px rgba(134,1,32,0.3);
+            box-shadow: 0 2px 6px rgba(134, 1, 32, 0.3);
         }
 
         .form-control,
@@ -417,6 +455,7 @@
             border-color: #b8dece;
             color: #1a5c3a;
         }
+
         .alert-danger {
             background: #fbeaed;
             border-color: #f0b8c3;
@@ -424,9 +463,13 @@
         }
 
         @media (max-width: 991.98px) {
-            :root { --sidebar-w: 220px; }
+            :root {
+                --sidebar-w: 220px;
+            }
 
-            .page-body { padding: 1rem 1.1rem 2rem; }
+            .page-body {
+                padding: 1rem 1.1rem 2rem;
+            }
         }
 
         @media (max-width: 767.98px) {
@@ -435,9 +478,10 @@
                 width: var(--sidebar-w);
                 box-shadow: none;
             }
+
             .sidebar.open {
                 transform: translateX(0);
-                box-shadow: 4px 0 20px rgba(0,0,0,.15);
+                box-shadow: 4px 0 20px rgba(0, 0, 0, .15);
             }
 
             .main-content {
@@ -473,8 +517,13 @@
         }
 
         @media (max-width: 575.98px) {
-            .stat-value { font-size: 1.25rem; }
-            .stat-icon  { font-size: 1.5rem; }
+            .stat-value {
+                font-size: 1.25rem;
+            }
+
+            .stat-icon {
+                font-size: 1.5rem;
+            }
         }
     </style>
     @stack('styles')
@@ -497,33 +546,40 @@
 
         <nav class="sidebar-nav">
             <div class="nav-section">Menu Utama</div>
-            <a href="{{ route('admin.dashboard') }}" class="nav-link {{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
+            <a href="{{ route('admin.dashboard') }}"
+                class="nav-link {{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
                 <i class="bi bi-grid"></i> <span>Dashboard</span>
             </a>
-            <a href="{{ route('admin.produk.index') }}" class="nav-link {{ request()->routeIs('admin.produk*') ? 'active' : '' }}">
+            <a href="{{ route('admin.produk.index') }}"
+                class="nav-link {{ request()->routeIs('admin.produk*') ? 'active' : '' }}">
                 <i class="bi bi-box-seam"></i> <span>Produk</span>
             </a>
-            <a href="{{ route('admin.kategori.index') }}" class="nav-link {{ request()->routeIs('admin.kategori*') ? 'active' : '' }}">
+            <a href="{{ route('admin.kategori.index') }}"
+                class="nav-link {{ request()->routeIs('admin.kategori*') ? 'active' : '' }}">
                 <i class="bi bi-tags"></i> <span>Kategori</span>
             </a>
 
             <div class="nav-section">Transaksi</div>
-            <a href="{{ route('admin.pesanan.index') }}" class="nav-link {{ request()->routeIs('admin.pesanan*') ? 'active' : '' }}">
+            <a href="{{ route('admin.pesanan.index') }}"
+                class="nav-link {{ request()->routeIs('admin.pesanan*') ? 'active' : '' }}">
                 <i class="bi bi-bag"></i> <span>Pesanan</span>
                 @php $pending = \App\Models\Pesanan::where('status_pesanan','menunggu_pembayaran')->count() @endphp
                 @if ($pending > 0)
                     <span class="badge bg-danger ms-auto">{{ $pending }}</span>
                 @endif
             </a>
-            <a href="{{ route('admin.promo.index') }}" class="nav-link {{ request()->routeIs('admin.promo*') ? 'active' : '' }}">
+            <a href="{{ route('admin.promo.index') }}"
+                class="nav-link {{ request()->routeIs('admin.promo*') ? 'active' : '' }}">
                 <i class="bi bi-percent"></i> <span>Promo</span>
             </a>
 
             <div class="nav-section">Lainnya</div>
-            <a href="{{ route('admin.users.index') }}" class="nav-link {{ request()->routeIs('admin.users*') ? 'active' : '' }}">
+            <a href="{{ route('admin.users.index') }}"
+                class="nav-link {{ request()->routeIs('admin.users*') ? 'active' : '' }}">
                 <i class="bi bi-people"></i> <span>Users</span>
             </a>
-            <a href="{{ route('admin.laporan.index') }}" class="nav-link {{ request()->routeIs('admin.laporan*') ? 'active' : '' }}">
+            <a href="{{ route('admin.laporan.index') }}"
+                class="nav-link {{ request()->routeIs('admin.laporan*') ? 'active' : '' }}">
                 <i class="bi bi-file-earmark-bar-graph"></i> <span>Laporan</span>
             </a>
         </nav>
@@ -581,8 +637,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        const sidebar  = document.getElementById('sidebar');
-        const overlay  = document.getElementById('sidebarOverlay');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('sidebarOverlay');
         const btnHamburger = document.getElementById('btnHamburger');
 
         function openSidebar() {
