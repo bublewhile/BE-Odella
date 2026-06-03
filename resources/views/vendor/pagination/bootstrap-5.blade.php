@@ -1,7 +1,5 @@
 @if ($paginator->hasPages())
     <nav class="d-flex justify-items-center justify-content-between align-items-center px-2 py-2">
-
-        {{-- Mobile: simple prev/next --}}
         <div class="d-flex justify-content-between flex-fill d-sm-none">
             <ul class="pagination pagination-sm mb-0">
                 @if ($paginator->onFirstPage())
@@ -26,10 +24,7 @@
             </ul>
         </div>
 
-        {{-- Desktop: full pagination --}}
         <div class="d-none flex-sm-fill d-sm-flex align-items-sm-center justify-content-sm-between">
-
-            {{-- Info text --}}
             <div>
                 <p class="mb-0" style="font-size:.8rem;color:#6c757d;">
                     Showing
@@ -42,11 +37,8 @@
                 </p>
             </div>
 
-            {{-- Page links --}}
             <div>
                 <ul class="pagination pagination-sm mb-0" style="gap:2px;">
-
-                    {{-- Previous --}}
                     @if ($paginator->onFirstPage())
                         <li class="page-item disabled" aria-disabled="true" aria-label="@lang('pagination.previous')">
                             <span class="page-link" aria-hidden="true"
@@ -63,8 +55,6 @@
                             </a>
                         </li>
                     @endif
-
-                    {{-- Page numbers --}}
                     @foreach ($elements as $element)
                         @if (is_string($element))
                             <li class="page-item disabled" aria-disabled="true">
@@ -95,8 +85,6 @@
                             @endforeach
                         @endif
                     @endforeach
-
-                    {{-- Next --}}
                     @if ($paginator->hasMorePages())
                         <li class="page-item">
                             <a class="page-link" href="{{ $paginator->nextPageUrl() }}" rel="next"
