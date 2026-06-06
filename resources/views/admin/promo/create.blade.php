@@ -8,7 +8,7 @@
     </a>
 </div>
 
-<div class="card shadow-sm" style="max-width:640px">
+<div class="card shadow-sm mx-auto" style="max-width:640px">
     <div class="card-header bg-white fw-semibold">
         <i class="bi bi-percent me-2 text-success"></i>Form Tambah Promo
     </div>
